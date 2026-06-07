@@ -1,0 +1,74 @@
+<html>
+ <head>
+    <title>stemers elakalat elfashi5a</title>
+    <style>
+     body{
+        background-color: black;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 50px 20px;
+     }
+     .panel{
+        background-color: black;
+        border: 8px solid coral;
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 450px;
+        margin:0 auto;
+     }
+     a{
+        color: yellow;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-size: 24px;
+     }
+     ul{
+        text-align: left;
+        line-height: 2;
+        display: inline-block;
+        line-height: 2;
+        font-size: 1.8rem;
+        color: white;
+     }
+    </style>
+ </head>
+    
+  <body>
+    <div class="panel">
+       <h2>stemers elakalat elfashi5a</h2>
+       <ul id="snackslist">  </ul>
+    </div>
+
+    <script>
+      const chips= ["big chips","fox chips"];
+      const sweets=["konata ice cream"];
+      const snacksall=[...chips, ...sweets, "koshary","crepe","indomie"];
+      const emojiMap = {
+      "big chips": "💪",
+      "fox chips": "🦊",
+      "konata ice cream": "🍦",
+      "koshary": "🍛🧄🍅🧅",
+      "crepe": "🥞🫓🫔🥟",
+      "indomie": "🍜"
+      };
+      const trgtlist= document.getElementById("snackslist");
+
+      snacksall.forEach(function(snackname) {
+        
+       let itemlist = document.createElement("li");
+       let itemlink = document.createElement("a");
+       let filename = snackname.replace(/\s+/g, '') + ".html";
+       itemlink.href = filename;
+       let emoji = emojiMap[snackname] || "";
+       itemlink.textContent = snackname + " " + emoji;
+       itemlink.style.color = "#ffcc00";
+       itemlink.style.textdecoration = "underline";
+       itemlist.appendChild(itemlink);
+       trgtlist.appendChild(itemlist); 
+     })
+    </script>
+  </body>
+</html>
