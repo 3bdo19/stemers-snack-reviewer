@@ -89,6 +89,8 @@
   <p>3:pistachio</p>
   <p>4:cookies</p>
   <p>5:caramel</p>
+  <p id="secret">click below to reveal the chef secret</p>
+  <button id="secret-btn">reveal secret</button>
   <button id="order-btn">order here!!</button>
   <p id="status">kitchen status: if hungry place order!!!</p>
   <button id="vote-btn">vote for konata (0 votes)</button>
@@ -99,6 +101,12 @@
       const votebutton = document.getElementById("vote-btn")
       const orderbutton =  document.getElementById("order-btn")
       const status = document.getElementById("status")
+      const secretbutton = document.getElementById("secret-btn");
+      const secret = document.getElementById("secret");
+
+      secretbutton.addEventListener("click", function() {
+         secret.textContent = "The secret ingredient is just massive amounts of ghee and pure nostalgia!";
+      });
 
       orderbutton.addEventListener("click", function() {
          status.textContent = "kitchen status: order placed, please wait for your food";
