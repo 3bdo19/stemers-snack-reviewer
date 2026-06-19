@@ -37,6 +37,22 @@
     border-radius: 8px;
     text-align: center;
   }
+  #vote-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  #vote-btn:hover{
+    background-color: red;
+    color: white;
+    transform: scale(1.05);
+  }
 
  </style>
 </head>    
@@ -53,9 +69,19 @@
   <p>2:spices</p>
   <p>3:boiled water</p>
   <p>7:and even more things!!</p>
+  <button id="vote-btn">vote for indomie (0 votes)</button>
   <a href="index.html">return to the full kitchen</a>
  </div>
+ <script>
+      let votecount = 0;
+      const votebutton = document.getElementById("vote-btn")
 
+      votebutton.addEventListener("click", function() {
+         votecount = votecount + 1;
+         votebutton.textContent = "vote for indomie ("+votecount+" votes)";
+      })
+
+ </script>
 </body>
 
 </html>
