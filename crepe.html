@@ -53,7 +53,26 @@
     color: white;
     transform: scale(1.05);
   }
-
+  #order-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: transparent;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  #order-btn:hover{
+    background-color: yellow;
+    color: black;
+    transform: scale(1.05);
+  }
+  #status{
+    font-weight: bold;
+    margin-top: 10px;
+  }
  </style>
 </head>    
 
@@ -72,13 +91,24 @@
   <p>5:pickles</p>
   <p>6:lettuce</p>
   <p>7:and even more things!!</p>
+  <button id="order-btn">order here!!</button>
+  <p id="status">kitchen status: if hungry place order!!!</p>
   <button id="vote-btn">vote for crepe (0 votes)</button>
   <a href="index.html">return to the full kitchen</a>
  </div>
  <script>
       let votecount = 0;
       const votebutton = document.getElementById("vote-btn")
+      const orderbutton =  document.getElementById("order-btn")
+      const status = document.getElementById("status")
 
+      orderbutton.addEventListener("click", function() {
+         status.textContent = "kitchen status: order placed, please wait for your food";
+         
+         setTimeout(function() {
+            status.textContent = "kitchen status: your order is ready, please enjoy your food";
+         }, 5000);
+      })
       votebutton.addEventListener("click", function() {
          votecount = votecount + 1;
          votebutton.textContent = "vote for crepe ("+votecount+" votes)";
